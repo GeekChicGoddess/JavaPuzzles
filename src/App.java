@@ -6,26 +6,26 @@ public class App {
 
     public static void main(String[] args) {
 
-        Stack theStack = new Stack(5);
-        theStack.push('h');
-        theStack.push('e');
-        theStack.push('l');
-        theStack.push('l');
-        theStack.push('o');
-
-
-        while(!theStack.isEmpty()){
-            char value = theStack.pop();
-            reverseString(value);
-        }
-        System.out.println(wordReversed);
+//        Stack theStack = new Stack(5);
+        System.out.println(reverseString("Hello"));
 
 
     }
 
-    public static String wordReversed = "";
-    public static String reverseString(char character){
-        wordReversed = wordReversed + character;
-        return wordReversed;
+
+    public static String reverseString(String str){
+       int stackSize = str.length();
+       Stack newStack = new Stack(stackSize);
+       for(int i=0; i<str.length(); i++ ){
+          char ch = str.charAt(i);
+          newStack.push(ch);
+       }
+
+       String result = "";
+
+       while(!newStack.isEmpty()){
+           result += newStack.pop();
+       }
+        return result;
     }
 }
