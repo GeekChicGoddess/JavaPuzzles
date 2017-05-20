@@ -1,7 +1,7 @@
 /**
  * Created by melodytempleton on 5/20/17.
  */
-public class animal {
+public abstract class animal {
 
     int age;
     String gender;
@@ -9,23 +9,21 @@ public class animal {
 
 
 
-    void eat(String food){
+    void eat(){
 
-        System.out.println("I eat " + food);
+        System.out.println("eating");
 
     }
 
-    void sleep (String dayOrNight){
-        System.out.println("I sleep during the " + dayOrNight);
+    void sleep (){
+        System.out.println("Sleeping");
     }
 
-    public animal(String food, String dayOrNight, int age, int weight, String gender) {
+    public animal(int age, int weight, String gender) {
             this.gender=gender;
             this.age = age;
             this.weight = weight;
-
-
-            sleep(dayOrNight);
-            eat(food);
     }
+
+    abstract void move();
 }
